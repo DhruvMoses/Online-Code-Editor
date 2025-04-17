@@ -1,0 +1,61 @@
+.modal-Container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+    .modal-Body {
+        background-color: white;
+        padding: 30px;
+        padding-top: 40px; /* Space for the close button */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        opacity: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            input{
+                border: none;
+                background-color: rgb(212, 246, 223);
+                padding: 6px;
+                border-radius: 4px;
+                width: 170px;
+            }
+            input:focus{
+                outline: none;
+            }
+            select{
+                height: 35px;
+                width: 100px;
+            }
+            button{
+                border: none;
+                padding: 10px 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                background-color: #55b6fb;
+                color: white;
+            }
+            button:hover{
+                background-color: #4270f1;
+            }
+        }
+        .material-symbols-outlined {
+            position: absolute;
+            top: 10px; /* Moves it down slightly */
+            right: 10px; /* Aligns it to the right */
+            cursor: pointer; /* Show clickable cursor */
+        }
+    }
+}

@@ -1,0 +1,45 @@
+html, body {
+    height: 100%;
+    overflow: hidden; /* Stop entire page from scrolling */
+}
+.home-container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    overflow: hidden;
+        .left-container{
+            background-color: #1E1E1E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                .items-container{
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                        img{
+                            width: 250px;
+                            height: 150px;
+                        }
+                        h2{
+                            color: rgb(177, 171, 171);
+                        }
+                        button{
+                            cursor: pointer;
+                            height: 50px;
+                            width: 90%;
+                            border-radius: 25px;
+                            border: none;
+                            transition-duration: 0.3s;
+                            font-size: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        button:hover{
+                            box-shadow: 2px 2px 15px grey;
+                        }
+                }
+        }
+}

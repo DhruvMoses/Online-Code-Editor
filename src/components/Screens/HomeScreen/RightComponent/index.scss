@@ -1,0 +1,94 @@
+.right-container{
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+    .material-symbols-outlined{
+        cursor: pointer;
+    }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 2px solid black;
+                .new-folder{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    background: white;
+                    cursor: pointer;
+                }
+                .title{
+                    font-weight: 600;
+                    font-size: 32px;
+                        span{
+                            font-weight: 400;
+                        }
+                }
+        }
+        .folder-container{
+            padding: 0 0 20px 0;
+            .folder-header{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid black;
+                padding: 20px 0 10px 0;
+                    .folder-header-items{
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                            button{
+                                background-color: white;
+                                border: px solid black;
+                                border: none;
+                                display: flex;
+                                align-items: center;
+                            }
+                    }
+            }
+            .cards-container{
+                padding: 20px 20px 0 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+                position: relative;
+                .card{
+                    border-radius: 15px;
+                    box-shadow: 3px 3px 6px gray ;
+                    cursor: pointer;
+                    padding: 12px;
+                    display: flex;
+                    width: 45%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 25px;
+                    transition-duration: 0.2s;
+                        .card-description{
+                            display: flex;
+                            flex-direction: column;
+                            white-space: nowrap;
+                        }
+                        img{
+                            width: 80px;
+                            height: 45px;
+                            border-radius: 5px;
+                        }
+                        .card-description {
+                            display: flex;
+                            flex-direction: column;
+                            white-space: nowrap;
+                            align-items: flex-start;
+                        }
+                        .card-icons {
+                            display: flex;
+                            gap: 10px;
+                            margin-left: auto;  
+                        }
+                }
+                .card:hover{
+                    box-shadow: 3px 3px 20px gray;
+                }
+            }
+        }
+}

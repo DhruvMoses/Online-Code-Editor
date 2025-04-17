@@ -1,0 +1,91 @@
+.root-editor-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-right: 3px solid black;
+    .editor-header{
+        font-size: 24px;
+    }
+    .editor-header{
+        background-color: #1A1A1A;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        select{
+            background-color: #1F2937; 
+            color: #F8FAFC; 
+            border: 2px solid #4DDC68;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+        select:focus{
+            outline: none;
+        }
+        button{
+            color:#00B8A2;
+            background-color:  #2A3D3A;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+        button:hover{
+            background-color: #2a635a;
+        }
+    }
+    .editor-footer{
+        background-color: #1A1A1A;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-shrink: 0;
+        .btn{
+            display: flex;
+            align-items: center;
+            padding: 4px 10px;
+            background-color: #3E3E3E;
+            color: #C3C4C8;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            gap: 10px;
+            transition-duration: 0.5s;
+        }
+        .btn:hover{
+            background-color: #6c6c6f;
+        }
+        .run-btn{
+            display: flex;
+            align-items: center;
+            padding: 10px 10px 10px 10px;
+            background-color: #2A3D3A;
+            color: #00B8A2;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            gap: 6px;
+        }
+    }
+    .editor-body{
+        // background-color: white;
+        display: flex; 
+        flex-grow: 1;
+        min-height: 0;
+    }
+    .left-side{
+        display: flex;
+        padding: 10px 10px 10px 20px;
+        gap: 25px;
+        align-items: center;
+    }
+    .right-side{
+        display: flex;
+        padding: 10px;
+        gap: 10px;
+        align-items: center;
+    }
+}
