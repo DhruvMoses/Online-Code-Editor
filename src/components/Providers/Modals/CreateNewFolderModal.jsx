@@ -26,7 +26,7 @@ export const CreateNewFolderModal = () => {
                 <span onClick={closeModal} className="material-symbols-outlined">close</span>
                 <h1>Create New Folder</h1>
                 <div style={CreateFolderStyles.inputContainer}>
-                <input name="folderName" style={CreateFolderStyles.inputBox} placeholder="Enter Folder Name"/>
+                <input name="folderName" style={CreateFolderStyles.inputBox} placeholder="Enter Folder Name" required/>
                 <button style={CreateFolderStyles.button} type="submit">Create Folder</button>
                 </div>
             </form>

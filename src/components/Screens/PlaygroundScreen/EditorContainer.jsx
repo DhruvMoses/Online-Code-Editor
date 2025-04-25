@@ -19,7 +19,7 @@ const fileExtensionMapping = {
 
 
 export const EditorContainer = ({ fileId, folderId, runCode }) => {
-  const { getDefaultCode, getLanguage, updateLanguage, saveCode } =
+  const { getDefaultCode, getLanguage, updateLanguage, saveCode, getFileTitle } =
     useContext(PlaygroundContext);
 
   const [code, setCode] = useState(() => {
@@ -27,6 +27,7 @@ export const EditorContainer = ({ fileId, folderId, runCode }) => {
   });
   const [language, setLanguage] = useState(() => getLanguage(fileId, folderId));
   const [theme, setTheme] = useState("vs-dark");
+  const [fileName, setFileName] = useState(() => getFileTitle(fileId, folderId));
   const codeRef = useRef(code);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ export const EditorContainer = ({ fileId, folderId, runCode }) => {
     const latestCode = getDefaultCode(fileId, folderId);
     setCode(latestCode);
     codeRef.current = latestCode;
+    setFileName(getFileTitle(fileId, folderId))
 }, [fileId, folderId]);
 
   useEffect(() => {
@@ -110,7 +112,7 @@ export const EditorContainer = ({ fileId, folderId, runCode }) => {
 
     //Force a slight delay to ensure state updates before running code
     setTimeout(() => {
-      codeRef.current = getDefaultCode(fileId, folderId); // Sync reference
+      codeRef.current = getDefaultCode(fileId, folderId); 
   }, 50);
   };
 
@@ -131,8 +133,7 @@ export const EditorContainer = ({ fileId, folderId, runCode }) => {
     <div className="root-editor-container">
       <div className="editor-header">
         <div className="left-side">
-          <b>{"File Name"}</b>
-          <span className="material-symbols-outlined">border_color</span>
+          <b>{fileName}</b>
           <button onClick={onSaveCode}>Save Code</button>
         </div>
         <div className="right-side">

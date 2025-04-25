@@ -119,9 +119,9 @@ export const PlaygroundProvider = ({children}) => {
         //ab agar for eg uss folder m 3 files thi toh "files.length = 3" h   
             for(let j=0; j<files.length; j++){
         //ab check krenge jis fileId ke naam ko edit krna h wo desired fileId se match krgyi
-                if(files[i].id === fileId){
+                if(files[j].id === fileId){
         //ab agar dono match hogyi aur desired file mil gyi toh uska title change hojayega to "newFileName"
-                    files[i].title = newFileName
+                    files[j].title = newFileName
                     break;
                 }
             }
@@ -218,6 +218,20 @@ export const PlaygroundProvider = ({children}) => {
         localStorage.setItem('data', JSON.stringify(newFolders))
         setFolders(newFolders)
     }
+
+    const getFileTitle = (fileId, folderId) => {
+        for(let i = 0; i < folders.length; i++) {
+            if(folders[i].id === folderId) {
+                for(let j = 0; j < folders[i].files.length; j++) {
+                    const currentFile = folders[i].files[j];
+                    if(fileId === currentFile.id) {
+                        return currentFile.title;
+                    }
+                }
+            }
+        }
+        return "Untitled"; // Default if not found
+    }
 //1.ye useEffect() isliye use hua h ki jab bhi playgroundProvider first time render hoga taaki local storage
 // mai jaaake ek format m store hue aur jab bhi koi component mount hoga ye useEffect() invoke hoyega
 
@@ -244,6 +258,7 @@ export const PlaygroundProvider = ({children}) => {
         getLanguage,
         updateLanguage,
         saveCode,
+        getFileTitle,
     }
     return(
         <>

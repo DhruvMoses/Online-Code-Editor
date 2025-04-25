@@ -86,6 +86,7 @@ const Folder = ({folderTitle, cards,folderId }) => {
                                 className="material-symbols-outlined" 
                                 onClick={(e) => {
                                 e.stopPropagation();   // Prevents file opening
+                                setModalPayload({fileId: file.id, folderId: folderId});
                                 openModal(modalConstants.UPDATE_FILE_TITLE);
                                  }}
                             >
